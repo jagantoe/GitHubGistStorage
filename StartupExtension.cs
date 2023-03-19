@@ -12,7 +12,7 @@ public static class StartupExtension
 	public static IServiceCollection ConfigureGistStorage(this IServiceCollection services, string projectName, string token, string gistId)
 	{
 		services.AddSingleton(new GistStorageOptions(projectName, token, gistId));
-		services.AddScoped<IGistClient, GistClient>();
+		services.AddSingleton<IGistClient, GistClient>();
 		return services;
 	}
 }

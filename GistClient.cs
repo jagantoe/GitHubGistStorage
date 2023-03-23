@@ -21,6 +21,7 @@ internal sealed class GistClient : IGistClient
 	{
 		_gistStorageOptions = gistStorageOptions;
 		_client = new GitHubClient(new ProductHeaderValue(_gistStorageOptions.ProjectName));
+		_client.Credentials = new Credentials(gistStorageOptions.Token);
 	}
 
 	/// <summary>
